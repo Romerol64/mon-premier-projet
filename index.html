@@ -1,11 +1,331 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Mon premier projet</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amicale Laïque Echirolles Rugby — A.L.E. Rugby</title>
+<meta name="description" content="Amicale Laïque Echirolles Rugby : club de rugby à Echirolles. École de rugby, seniors, féminines, loisirs. Rejoignez la mêlée.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23071233'/%3E%3Cellipse cx='50' cy='50' rx='30' ry='20' fill='none' stroke='%23c9a227' stroke-width='6'/%3E%3Cline x1='34' y1='50' x2='66' y2='50' stroke='%23c9a227' stroke-width='4'/%3E%3C/svg%3E">
+
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Bonjour, je code ! 🎉</h1>
-    <p>Ceci est ma toute première page web.</p>
+
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="header">
+  <div class="header-inner container">
+    <a href="#accueil" class="brand">
+      <svg class="crest" viewBox="0 0 120 130" aria-hidden="true">
+        <path d="M60 4 L112 22 V64 C112 96 90 118 60 126 C30 118 8 96 8 64 V22 Z" fill="#071233" stroke="#c9a227" stroke-width="3"/>
+        <path d="M60 12 L104 27 V64 C104 92 85 111 60 118 C35 111 16 92 16 64 V27 Z" fill="none" stroke="#c9a227" stroke-width="1.5" opacity="0.6"/>
+        <ellipse cx="60" cy="66" rx="30" ry="19" fill="none" stroke="#0048dc" stroke-width="5"/>
+        <ellipse cx="60" cy="66" rx="30" ry="19" fill="none" stroke="#c9a227" stroke-width="1.2"/>
+        <line x1="43" y1="66" x2="77" y2="66" stroke="#c9a227" stroke-width="3"/>
+        <line x1="49" y1="59" x2="49" y2="73" stroke="#c9a227" stroke-width="2"/>
+        <line x1="55" y1="57" x2="55" y2="75" stroke="#c9a227" stroke-width="2"/>
+        <line x1="65" y1="57" x2="65" y2="75" stroke="#c9a227" stroke-width="2"/>
+        <line x1="71" y1="59" x2="71" y2="73" stroke="#c9a227" stroke-width="2"/>
+        <path d="M20 96 L60 108 L100 96 L94 116 L60 126 L26 116 Z" fill="#c9a227"/>
+        <text x="60" y="102" text-anchor="middle" font-family="Oswald, sans-serif" font-size="13" font-weight="700" letter-spacing="1" fill="#071233">A.L.E.R</text>
+      </svg>
+      <span class="brand-text">
+        <strong>Echirolles</strong>
+        <em>Rugby</em>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#club">Le Club</a></li>
+        <li><a href="#equipes">Équipes</a></li>
+        <li><a href="#actualites">Calendrier</a></li>
+        <li><a href="#partenaires">Partenaires</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a href="#rejoindre" class="btn btn-gold nav-cta">Rejoindre le club</a>
+
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="accueil">
+    <div class="hero-bg" aria-hidden="true">
+      <svg class="hero-ball" viewBox="0 0 200 120" aria-hidden="true">
+        <ellipse cx="100" cy="60" rx="95" ry="55" fill="none" stroke="#0048dc" stroke-width="2"/>
+      </svg>
+      <div class="hero-shine"></div>
+    </div>
+    <div class="container hero-inner">
+      <p class="eyebrow">Amicale Laïque Echirolles Rugby — Depuis toujours au cœur d'Echirolles</p>
+      <h1 class="hero-title">
+        <span>La mêlée est</span>
+        <span class="hero-title-accent">une famille.</span>
+      </h1>
+      <p class="hero-sub">École de rugby, seniors, féminines &amp; loisirs : un club, un maillot, une ambiance de troisième mi-temps qui ne s'arrête jamais.</p>
+      <div class="hero-actions">
+        <a href="#rejoindre" class="btn btn-blue">Nous rejoindre</a>
+        <a href="#actualites" class="btn btn-outline">Voir le calendrier</a>
+      </div>
+      <ul class="hero-stats">
+        <li><strong>1948</strong><span>Une amicale laïque historique</span></li>
+        <li><strong>6+</strong><span>Catégories, de l'école de rugby aux seniors</span></li>
+        <li><strong>100%</strong><span>Convivialité &amp; troisième mi-temps</span></li>
+      </ul>
+    </div>
+    <a href="#club" class="scroll-cue" aria-label="Découvrir le club">
+      <span></span> Découvrir le club
+    </a>
+  </section>
+
+  <!-- ============ LE CLUB ============ -->
+  <section class="club" id="club">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Le Club</p>
+        <h2>L'esprit pub, les valeurs du rugby</h2>
+        <p class="section-lead">Chez l'A.L.E. Rugby, on aime le jeu franc, les longues tables de troisième mi-temps et le maillot qu'on ne quitte jamais vraiment. Une amicale laïque avant tout : ouverte à tous, du premier pas sur le pré à la retraite sportive.</p>
+      </div>
+
+      <div class="pub-panel">
+        <blockquote class="pub-quote">
+          <span class="quote-mark">“</span>
+          Ici, on ne recrute pas des joueurs. On accueille des personnes qui repartent avec une deuxième famille.
+          <footer>— Le bureau de l'Amicale Laïque Echirolles Rugby</footer>
+        </blockquote>
+      </div>
+
+      <div class="values-grid">
+        <article class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 4 L44 12 V24 C44 34 36 42 24 44 C12 42 4 34 4 24 V12 Z" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M24 16 L28 24 L24 32 L20 24 Z" fill="currentColor"/></svg>
+          </div>
+          <h3>Combativité</h3>
+          <p>On ne lâche rien sur le terrain, jusqu'à la dernière minute et au dernier mètre.</p>
+        </article>
+        <article class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle cx="16" cy="18" r="7" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="32" cy="18" r="7" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M4 42 C4 32 10 28 16 28 C22 28 28 32 28 42" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M22 42 C22 32 26 28 32 28 C38 28 44 32 44 42" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+          </div>
+          <h3>Fraternité</h3>
+          <p>Une amicale laïque avant tout : la porte du club reste ouverte à toutes et tous.</p>
+        </article>
+        <article class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 6 L28 20 L42 20 L31 29 L35 43 L24 34 L13 43 L17 29 L6 20 L20 20 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Respect</h3>
+          <p>De l'arbitre, de l'adversaire, du maillot : les fondations du rugby depuis toujours.</p>
+        </article>
+        <article class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M10 30 V16 H38 V30" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M6 30 H42 L38 40 H10 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><line x1="24" y1="16" x2="24" y2="8" stroke="currentColor" stroke-width="2.5"/></svg>
+          </div>
+          <h3>Convivialité</h3>
+          <p>La troisième mi-temps n'est pas une option : c'est une institution au club-house.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EQUIPES ============ -->
+  <section class="teams" id="equipes">
+    <div class="container">
+      <div class="section-head light">
+        <p class="kicker kicker-light">Nos Équipes</p>
+        <h2>Du premier essai à la légende du club</h2>
+        <p class="section-lead">Six catégories, un seul club. Chaque joueuse et joueur trouve sa place, quel que soit l'âge ou le niveau.</p>
+      </div>
+
+      <div class="teams-grid">
+        <article class="team-card">
+          <span class="team-number">M6–M14</span>
+          <h3>École de Rugby</h3>
+          <p>L'apprentissage du jeu, des valeurs et du plaisir dans la bonne humeur, encadré par des éducateurs diplômés.</p>
+        </article>
+        <article class="team-card">
+          <span class="team-number">M15–M18</span>
+          <h3>Cadets &amp; Juniors</h3>
+          <p>La montée en puissance : intensité, technique et esprit d'équipe pour préparer la relève.</p>
+        </article>
+        <article class="team-card featured">
+          <span class="team-number">SEN</span>
+          <h3>Seniors</h3>
+          <p>Le fer de lance du club le week-end, portant fièrement les couleurs bleu et or d'Echirolles.</p>
+        </article>
+        <article class="team-card">
+          <span class="team-number">FEM</span>
+          <h3>Féminines</h3>
+          <p>Un rugby en plein essor, combatif et fraternel, ouvert à toutes les nouvelles venues.</p>
+        </article>
+        <article class="team-card">
+          <span class="team-number">LOI</span>
+          <h3>Rugby Loisir</h3>
+          <p>Le jeu sans la pression du résultat : pour le plaisir de courir, plaquer et partager un verre après.</p>
+        </article>
+        <article class="team-card">
+          <span class="team-number">+35</span>
+          <h3>Vétérans</h3>
+          <p>Les anciens gardent la flamme, entre bons souvenirs et nouvelles histoires de club.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CALENDRIER / ACTUALITES ============ -->
+  <section class="fixtures" id="actualites">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Calendrier</p>
+        <h2>Les prochains rendez-vous</h2>
+        <p class="section-lead">Le programme de la saison, à retrouver sur l'ardoise du club-house. Contactez-nous pour le calendrier complet et les horaires officiels.</p>
+      </div>
+
+      <div class="chalkboard">
+        <div class="chalkboard-header">
+          <span>Journée</span><span>Rencontre</span><span>Lieu</span><span>Coup d'envoi</span>
+        </div>
+        <ul class="chalkboard-list">
+          <li>
+            <span class="day">J1</span>
+            <span class="match">Seniors — À confirmer</span>
+            <span class="place place-home">Domicile</span>
+            <span class="time">Samedi · 15h00</span>
+          </li>
+          <li>
+            <span class="day">J2</span>
+            <span class="match">Seniors — À confirmer</span>
+            <span class="place">Extérieur</span>
+            <span class="time">Samedi · 15h00</span>
+          </li>
+          <li>
+            <span class="day">J3</span>
+            <span class="match">École de Rugby — Plateau</span>
+            <span class="place place-home">Domicile</span>
+            <span class="time">Dimanche · 10h00</span>
+          </li>
+          <li>
+            <span class="day">J4</span>
+            <span class="match">Féminines — À confirmer</span>
+            <span class="place">Extérieur</span>
+            <span class="time">Samedi · 14h00</span>
+          </li>
+        </ul>
+        <p class="chalkboard-note">✎ Calendrier indicatif — mis à jour régulièrement par le bureau du club.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REJOINDRE ============ -->
+  <section class="join" id="rejoindre">
+    <div class="container join-inner">
+      <div class="join-text">
+        <p class="kicker kicker-light">Rejoindre le club</p>
+        <h2>Prêt·e à enfiler le maillot bleu et or ?</h2>
+        <p class="section-lead">Inscriptions ouvertes toute l'année pour toutes les catégories, de l'école de rugby aux vétérans. Un premier entraînement d'essai est toujours offert.</p>
+        <ul class="join-list">
+          <li>Licence FFR &amp; certificat médical requis</li>
+          <li>Prêt de matériel pour les débutants</li>
+          <li>Créneaux adaptés à chaque catégorie d'âge</li>
+        </ul>
+        <a href="#contact" class="btn btn-gold">Demander une inscription</a>
+      </div>
+      <div class="join-card">
+        <div class="jersey">
+          <svg viewBox="0 0 200 220" aria-hidden="true">
+            <path d="M40 20 L80 6 C86 18 114 18 120 6 L160 20 L180 55 L155 70 L150 210 H50 L45 70 L20 55 Z" fill="#0048dc" stroke="#071233" stroke-width="3"/>
+            <path d="M40 20 L80 6 C86 18 114 18 120 6 L160 20 L152 44 L120 30 L120 42 H80 V30 L48 44 Z" fill="#071233"/>
+            <text x="100" y="140" text-anchor="middle" font-family="Oswald, sans-serif" font-size="64" font-weight="700" fill="#c9a227">8</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARTENAIRES ============ -->
+  <section class="sponsors" id="partenaires">
+    <div class="container">
+      <p class="kicker center">Ils soutiennent le club</p>
+      <div class="sponsors-row">
+        <div class="sponsor-slot">Votre logo ici</div>
+        <div class="sponsor-slot">Votre logo ici</div>
+        <div class="sponsor-slot">Votre logo ici</div>
+        <div class="sponsor-slot">Votre logo ici</div>
+        <div class="sponsor-slot">Votre logo ici</div>
+      </div>
+      <p class="sponsors-cta">Envie de devenir partenaire du club ? <a href="#contact">Contactez le bureau</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER / CONTACT ============ -->
+<footer class="site-footer" id="contact">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <svg class="crest crest-footer" viewBox="0 0 120 130" aria-hidden="true">
+        <path d="M60 4 L112 22 V64 C112 96 90 118 60 126 C30 118 8 96 8 64 V22 Z" fill="#0a1a35" stroke="#c9a227" stroke-width="3"/>
+        <ellipse cx="60" cy="66" rx="30" ry="19" fill="none" stroke="#0048dc" stroke-width="5"/>
+        <line x1="43" y1="66" x2="77" y2="66" stroke="#c9a227" stroke-width="3"/>
+      </svg>
+      <p>Amicale Laïque Echirolles Rugby<br>Echirolles, Isère</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Le Club</h4>
+      <ul>
+        <li><a href="#club">Notre histoire</a></li>
+        <li><a href="#equipes">Nos équipes</a></li>
+        <li><a href="#actualites">Calendrier</a></li>
+        <li><a href="#rejoindre">Rejoindre le club</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>Complexe sportif — Echirolles (38130)</li>
+        <li><a href="mailto:contact@ale-echirolles-rugby.fr">contact@ale-echirolles-rugby.fr</a></li>
+        <li><a href="tel:+33476000000">04 76 XX XX XX</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Suivez-nous</h4>
+      <div class="social-row">
+        <a href="#" aria-label="Facebook" class="social-btn">
+          <svg viewBox="0 0 24 24"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v7h4v-7h3l1-4h-4V9c0-.6.4-1 1-1z" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="social-btn">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <p>© <span id="year"></span> Amicale Laïque Echirolles Rugby. Tous droits réservés.</p>
+    <p class="footer-tag">Allez l'A.L.E. !</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Retour en haut">↑</button>
+
+<script src="js/main.js"></script>
 </body>
 </html>
