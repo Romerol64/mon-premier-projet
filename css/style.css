@@ -347,6 +347,7 @@ section { padding: 110px 0; position: relative; }
 .footer-col h4 { font-family: var(--font-condensed); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.85rem; color: var(--gold-light); margin-bottom: 18px; }
 .footer-col ul { display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; }
 .footer-col a:hover { color: var(--gold-light); }
+.contact-note { color: rgba(255,255,255,0.45); font-size: 0.82rem; }
 .social-row { display: flex; gap: 12px; }
 .social-btn {
   width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2);
