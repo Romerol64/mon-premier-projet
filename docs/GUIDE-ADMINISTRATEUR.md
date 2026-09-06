@@ -91,6 +91,25 @@ du club, mot du président, etc.) :
 Tous ces changements apparaissent sur le site public en quelques
 secondes, sans avoir besoin de toucher au code.
 
+**Pages équipes** (une page détaillée par catégorie, accessible en
+cliquant sur une carte dans la section "Équipes" du site) : mêmes
+principes, avec en plus deux champs spéciaux :
+- **Photo** : cliquez "Choisir un fichier" pour ajouter/remplacer la
+  photo de la catégorie
+- **Fiche d'inscription (PDF)** : idem pour ajouter le PDF téléchargeable
+
+Le champ **"Identifiant technique"** (slug) doit être écrit exactement
+pareil des deux côtés : dans l'onglet "Équipes" (pour la carte) et dans
+l'onglet "Pages équipes" (pour la page détaillée), sinon le lien entre
+les deux ne fonctionne pas. Utilisez uniquement des lettres minuscules
+et des tirets, sans espace ni accent (ex : `seniors`, `cadets-juniors`).
+
+**Documents** : fonctionne comme une actualité, mais pour ajouter un
+fichier PDF téléchargeable (charte graphique, fiche d'inscription
+générale, newsletter...). Chaque document ajouté apparaît automatiquement
+sur la page `/documents.html` du site, accessible aussi via le bouton
+"Demander une inscription".
+
 ---
 
 ## 2. Donner l'accès à une nouvelle personne (ajouter un administrateur)

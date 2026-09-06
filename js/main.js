@@ -9,28 +9,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const onScroll = () => {
     const scrolled = window.scrollY > 40;
-    header.classList.toggle('scrolled', scrolled);
-    toTop.classList.toggle('visible', window.scrollY > 600);
+    if (header) header.classList.toggle('scrolled', scrolled);
+    if (toTop) toTop.classList.toggle('visible', window.scrollY > 600);
   };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  burger.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
-    burger.setAttribute('aria-expanded', String(isOpen));
-    burger.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
-  });
-
-  nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      burger.setAttribute('aria-expanded', 'false');
+  if (burger && nav) {
+    burger.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(isOpen));
+      burger.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
     });
-  });
 
-  toTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+    nav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  if (toTop) {
+    toTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   const revealTargets = document.querySelectorAll(
     '.value-card, .team-card, .pub-panel, .calendar-frame, .join-card, .sponsor-card, .section-head, .testimonial-card, .president-block, .palmares-block, .organigramme-groupe'

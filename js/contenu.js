@@ -93,13 +93,17 @@ async function chargerEquipes() {
   const items = await chargerItems('equipes');
   const conteneur = document.getElementById('teams-grid');
   if (!items || !conteneur) return;
-  conteneur.innerHTML = items.map((item) => `
-    <article class="team-card${item.champs.mis_en_avant ? ' featured' : ''}">
+  conteneur.innerHTML = items.map((item) => {
+    const lien = item.champs.slug ? `equipe.html?cat=${encodeURIComponent(item.champs.slug)}` : null;
+    return `
+    <a class="team-card${item.champs.mis_en_avant ? ' featured' : ''}"${lien ? ` href="${lien}"` : ' style="cursor:default"'}>
       <span class="team-number">${echapperHtml(item.champs.badge)}</span>
       <h3>${echapperHtml(item.champs.titre)}</h3>
       <p>${echapperHtml(item.champs.description)}</p>
-    </article>
-  `).join('');
+      ${lien ? '<span class="team-card-cta">Voir la fiche complète →</span>' : ''}
+    </a>
+  `;
+  }).join('');
 }
 
 async function chargerTarifs() {

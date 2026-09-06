@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catégorie — Amicale Laïque Echirolles Rugby</title>
+<meta name="description" content="Toutes les informations pratiques : licence, horaires, éducateurs, lieu d'entraînement.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/png" href="assets/logo-club.png">
+<link rel="apple-touch-icon" href="assets/logo-club.png">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header header-solide" id="header">
+  <div class="header-inner container">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-club.png" alt="Amicale Laïque Echirolles Rugby" class="crest">
+      <span class="brand-text">
+        <strong>Amicale Laïque</strong>
+        <em>Rugby</em>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#equipes">Équipes</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a href="index.html#rejoindre" class="btn btn-gold nav-cta">Rejoindre le club</a>
+
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-categorie" id="page-categorie">
+    <div class="container">
+      <a href="index.html#equipes" class="retour-lien">← Toutes les équipes</a>
+
+      <div id="categorie-chargement" class="categorie-chargement">Chargement…</div>
+
+      <div id="categorie-contenu" hidden>
+        <div class="categorie-entete">
+          <img id="cat-photo" class="categorie-photo" alt="" hidden>
+          <div>
+            <p class="kicker">Catégorie</p>
+            <h1 id="cat-titre"></h1>
+          </div>
+        </div>
+
+        <div class="categorie-grille">
+          <div class="categorie-bloc">
+            <h3>Licence</h3>
+            <p id="cat-licence"></p>
+          </div>
+          <div class="categorie-bloc">
+            <h3>Lieu d'entraînement</h3>
+            <p id="cat-lieu"></p>
+          </div>
+          <div class="categorie-bloc categorie-bloc-large">
+            <h3>Horaires d'entraînement</h3>
+            <p id="cat-horaires"></p>
+          </div>
+          <div class="categorie-bloc categorie-bloc-large">
+            <h3>Éducateurs &amp; coachs</h3>
+            <p id="cat-educateurs"></p>
+          </div>
+          <div class="categorie-bloc" id="bloc-effectif" hidden>
+            <h3>Effectif</h3>
+            <p id="cat-effectif"></p>
+          </div>
+          <div class="categorie-bloc" id="bloc-numeros" hidden>
+            <h3>Numéros importants</h3>
+            <p id="cat-numeros"></p>
+          </div>
+        </div>
+
+        <div id="cat-fiche-bloc" class="categorie-fiche" hidden>
+          <a id="cat-fiche-lien" href="#" target="_blank" rel="noopener" class="btn btn-blue">Télécharger la fiche d'inscription</a>
+        </div>
+      </div>
+
+      <div id="categorie-introuvable" class="categorie-chargement" hidden>
+        Aucune information disponible pour cette catégorie pour le moment.
+        <br><a href="index.html#contact">Contactez le bureau du club</a> pour plus de détails.
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" id="contact">
+  <div class="container footer-bottom" style="border-top: none; padding-top: 30px;">
+    <p>© <span id="year"></span> Amicale Laïque Echirolles Rugby.</p>
+    <a href="index.html">← Retour à l'accueil</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/equipe-detail.js"></script>
+</body>
+</html>
