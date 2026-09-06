@@ -336,6 +336,11 @@ section { padding: 110px 0; position: relative; }
 .sponsor-card strong { color: var(--navy); font-size: 0.9rem; }
 .sponsor-card span { color: #9a927a; font-size: 0.76rem; }
 
+.sponsor-card-logo {
+  background: var(--navy); border-color: var(--navy); padding: 14px; height: 96px;
+}
+.sponsor-card-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
 /* ---------- Equipes ---------- */
 .teams {
   background:

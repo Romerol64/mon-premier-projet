@@ -44,6 +44,7 @@ const SECTIONS_CONFIG = {
     champs: [
       { cle: 'nom', label: 'Nom du partenaire', type: 'text', requis: true },
       { cle: 'description', label: 'Description (facultatif)', type: 'text' },
+      { cle: 'logo', label: 'Logo (facultatif — image affichée à taille uniforme, quel que soit le format d\'origine)', type: 'image', cleUrl: 'logo_url' },
     ],
     resume: (c) => c.nom || '(sans nom)',
   },

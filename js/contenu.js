@@ -133,12 +133,21 @@ async function chargerPartenaires() {
   const items = await chargerItems('partenaires');
   const conteneur = document.getElementById('sponsors-grid');
   if (!items || !conteneur) return;
-  conteneur.innerHTML = items.map((item) => `
-    <div class="sponsor-card">
-      <strong>${echapperHtml(item.champs.nom)}</strong>
-      ${item.champs.description ? `<span>${echapperHtml(item.champs.description)}</span>` : ''}
-    </div>
-  `).join('');
+  conteneur.innerHTML = items.map((item) => {
+    if (item.champs.logo_url) {
+      return `
+        <div class="sponsor-card sponsor-card-logo" title="${echapperHtml(item.champs.nom)}${item.champs.description ? ' — ' + item.champs.description : ''}">
+          <img src="${item.champs.logo_url}" alt="${echapperHtml(item.champs.nom)}" loading="lazy">
+        </div>
+      `;
+    }
+    return `
+      <div class="sponsor-card">
+        <strong>${echapperHtml(item.champs.nom)}</strong>
+        ${item.champs.description ? `<span>${echapperHtml(item.champs.description)}</span>` : ''}
+      </div>
+    `;
+  }).join('');
 }
 
 async function chargerPalmares() {

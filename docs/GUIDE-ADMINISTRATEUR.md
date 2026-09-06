@@ -110,6 +110,14 @@ générale, newsletter...). Chaque document ajouté apparaît automatiquement
 sur la page `/documents.html` du site, accessible aussi via le bouton
 "Demander une inscription".
 
+**Partenaires** : chaque partenaire peut avoir un logo (facultatif).
+Cliquez "Choisir un fichier" pour l'ajouter — peu importe le format ou
+la couleur de fond du fichier d'origine (fond blanc, transparent, noir...),
+il s'affiche automatiquement à une taille uniforme sur une petite tuile
+foncée, pour que tous les logos aient le même rendu propre côte à côte.
+Sans logo ajouté, le nom et la description du partenaire s'affichent en
+texte à la place.
+
 ---
 
 ## 2. Donner l'accès à une nouvelle personne (ajouter un administrateur)
