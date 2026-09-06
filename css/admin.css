@@ -29,7 +29,8 @@
 .admin-hint { color: #64708a; font-size: 0.92rem; margin-bottom: 20px; line-height: 1.5; }
 
 /* ---------- Formulaires ---------- */
-#form-connexion, #form-actu, #form-album { display: flex; flex-direction: column; gap: 6px; }
+#form-connexion, #form-actu, #form-album, #form-contenu { display: flex; flex-direction: column; gap: 6px; }
+#contenu-form-champs { display: flex; flex-direction: column; gap: 6px; }
 .admin-body label { font-weight: 600; font-size: 0.88rem; margin-top: 14px; }
 .admin-body input[type="text"],
 .admin-body input[type="email"],
@@ -72,6 +73,18 @@
   color: #64708a; cursor: pointer;
 }
 .admin-tab.active { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.admin-tabs-secondaires { flex-wrap: wrap; margin-bottom: 24px; }
+.admin-tab-contenu { font-size: 0.82rem; padding: 8px 16px; }
+.admin-tab-contenu.active { background: var(--blue); border-color: var(--blue); }
+
+.btn-ajouter-contenu { margin-bottom: 20px; }
+.admin-texte-item { margin-bottom: 16px; padding: 22px; }
+.admin-texte-item label { margin-top: 0; }
+.admin-texte-item textarea {
+  font-family: var(--font-condensed); font-size: 0.95rem; padding: 10px 12px;
+  border: 1.5px solid #d8dce6; border-radius: 8px; width: 100%; margin-top: 6px;
+}
+.admin-texte-statut { font-size: 0.85rem; font-weight: 600; }
 
 /* ---------- Photos d'album ---------- */
 .admin-photos-section { margin-top: 30px; padding-top: 24px; border-top: 1px solid #e6e9f0; }

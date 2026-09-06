@@ -41,8 +41,9 @@
   <section id="vue-tableau-de-bord" hidden>
 
     <div class="admin-tabs">
-      <button type="button" class="admin-tab active" data-tab="actus">Actualités</button>
-      <button type="button" class="admin-tab" data-tab="albums">Albums photos</button>
+      <button type="button" class="admin-tab admin-tab-principal active" data-tab="actus">Actualités</button>
+      <button type="button" class="admin-tab admin-tab-principal" data-tab="albums">Albums photos</button>
+      <button type="button" class="admin-tab admin-tab-principal" data-tab="contenu">Contenu du site</button>
     </div>
 
     <div id="onglet-actus" class="admin-tab-panel">
@@ -63,6 +64,31 @@
       </div>
 
       <div id="liste-albums" class="admin-liste"></div>
+    </div>
+
+    <div id="onglet-contenu" class="admin-tab-panel" hidden>
+      <div class="admin-card">
+        <h1>Contenu du site</h1>
+        <p class="admin-hint">Organigramme, tarifs, horaires, partenaires, équipes, palmarès, valeurs du club et grands textes du site — tout ce qui est modifié ici se met à jour automatiquement sur les pages publiques.</p>
+      </div>
+
+      <div class="admin-tabs admin-tabs-secondaires">
+        <button type="button" class="admin-tab admin-tab-contenu active" data-section="organigramme">Organigramme</button>
+        <button type="button" class="admin-tab admin-tab-contenu" data-section="tarifs">Tarifs</button>
+        <button type="button" class="admin-tab admin-tab-contenu" data-section="horaires">Horaires</button>
+        <button type="button" class="admin-tab admin-tab-contenu" data-section="partenaires">Partenaires</button>
+        <button type="button" class="admin-tab admin-tab-contenu" data-section="equipes">Équipes</button>
+        <button type="button" class="admin-tab admin-tab-contenu" data-section="palmares">Palmarès</button>
+        <button type="button" class="admin-tab admin-tab-contenu" data-section="valeurs">Valeurs du club</button>
+        <button type="button" class="admin-tab admin-tab-contenu" data-section="textes">Grands textes</button>
+      </div>
+
+      <div id="contenu-liste-wrapper">
+        <button id="btn-nouvel-item-contenu" class="btn btn-blue btn-ajouter-contenu">+ Ajouter</button>
+        <div id="liste-contenu" class="admin-liste"></div>
+      </div>
+
+      <div id="contenu-textes-wrapper" hidden></div>
     </div>
 
   </section>
@@ -134,6 +160,30 @@
     </div>
   </section>
 
+  <!-- ===================== FORMULAIRE CONTENU (générique) ===================== -->
+  <section id="vue-formulaire-contenu" class="admin-card admin-card-narrow" hidden>
+    <h1 id="titre-formulaire-contenu">Ajouter</h1>
+
+    <form id="form-contenu">
+      <input type="hidden" id="contenu-id">
+      <div id="contenu-form-champs"></div>
+
+      <label for="contenu-ordre">Ordre d'affichage</label>
+      <input type="number" id="contenu-ordre" value="1" min="1" step="1">
+
+      <label class="admin-checkbox">
+        <input type="checkbox" id="contenu-publie" checked>
+        Visible sur le site (décochez pour masquer sans supprimer)
+      </label>
+
+      <div class="admin-form-actions">
+        <button type="submit" class="btn btn-blue">Enregistrer</button>
+        <button type="button" id="btn-annuler-contenu" class="btn btn-outline-dark">Annuler</button>
+      </div>
+      <p id="erreur-contenu" class="admin-erreur" hidden></p>
+    </form>
+  </section>
+
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
@@ -141,5 +191,6 @@
 <script src="../js/image-utils.js"></script>
 <script src="../js/admin.js"></script>
 <script src="../js/admin-albums.js"></script>
+<script src="../js/admin-contenu.js"></script>
 </body>
 </html>

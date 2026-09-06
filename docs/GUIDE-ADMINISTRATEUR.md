@@ -50,6 +50,49 @@ albums et cliquez **"Supprimer"**.
 
 ---
 
+## 1ter. Modifier le contenu du site (organigramme, tarifs, horaires, partenaires, équipes, palmarès, textes)
+
+Sur `/admin`, cliquez l'onglet **"Contenu du site"**. Une deuxième
+rangée de boutons permet de choisir quoi modifier : Organigramme,
+Tarifs, Horaires, Partenaires, Équipes, Palmarès, Valeurs du club,
+ou Grands textes.
+
+**Pour l'organigramme, les tarifs, les horaires, les partenaires,
+les équipes ou le palmarès** (fonctionnement identique pour les six) :
+
+1. Choisissez la catégorie en haut
+2. La liste actuelle s'affiche — **"Modifier"** ou **"Supprimer"**
+   à côté de chaque ligne, ou **"+ Ajouter"** pour une nouvelle ligne
+3. Remplissez les champs (ils changent selon la catégorie choisie —
+   par exemple Nom/Fonction/Email/Téléphone pour l'organigramme,
+   Catégorie/Prix pour les tarifs)
+4. Le champ **"Ordre d'affichage"** contrôle la position sur le site
+   (1 = affiché en premier)
+5. Décochez **"Visible sur le site"** pour masquer temporairement une
+   ligne sans la supprimer (utile pour un coach qui part en cours de
+   saison, par exemple)
+6. **Enregistrer**
+
+Pour l'organigramme spécifiquement, un champ **"Groupe / catégorie"**
+permet de ranger chaque personne dans une rubrique (Bureau, Salariés,
+École de Rugby, Seniors...). Tapez le nom exact d'un groupe existant
+pour y ajouter quelqu'un, ou un nouveau nom pour créer une nouvelle
+rubrique.
+
+**Pour les grands textes** (accroche de la page d'accueil, histoire
+du club, mot du président, etc.) :
+
+1. Choisissez **"Grands textes"**
+2. Chaque bloc de texte du site apparaît avec son propre champ et son
+   propre bouton **"Enregistrer"** — modifiez le texte souhaité et
+   cliquez juste le bouton à côté, pas besoin de tout enregistrer
+   d'un coup
+
+Tous ces changements apparaissent sur le site public en quelques
+secondes, sans avoir besoin de toucher au code.
+
+---
+
 ## 2. Donner l'accès à une nouvelle personne (ajouter un administrateur)
 
 Cette étape se fait depuis **Supabase** (le service qui héberge les

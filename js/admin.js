@@ -31,12 +31,17 @@ function cacherFormulaireAlbumSiPresent() {
   const el = document.getElementById('vue-formulaire-album');
   if (el) el.hidden = true;
 }
+function cacherFormulaireContenuSiPresent() {
+  const el = document.getElementById('vue-formulaire-contenu');
+  if (el) el.hidden = true;
+}
 
 function afficherConnexion() {
   vueConnexion.hidden = false;
   vueTableauDeBord.hidden = true;
   vueFormulaireActu.hidden = true;
   cacherFormulaireAlbumSiPresent();
+  cacherFormulaireContenuSiPresent();
   btnLogout.hidden = true;
 }
 
@@ -45,19 +50,22 @@ function afficherTableauDeBord() {
   vueTableauDeBord.hidden = false;
   vueFormulaireActu.hidden = true;
   cacherFormulaireAlbumSiPresent();
+  cacherFormulaireContenuSiPresent();
   btnLogout.hidden = false;
   chargerActualites();
 }
 
-// ---------- Onglets Actualités / Albums photos ----------
-document.querySelectorAll('.admin-tab').forEach((tab) => {
+// ---------- Onglets Actualités / Albums photos / Contenu du site ----------
+document.querySelectorAll('.admin-tab-principal').forEach((tab) => {
   tab.addEventListener('click', () => {
-    document.querySelectorAll('.admin-tab').forEach((t) => t.classList.remove('active'));
+    document.querySelectorAll('.admin-tab-principal').forEach((t) => t.classList.remove('active'));
     tab.classList.add('active');
     const cible = tab.dataset.tab;
     document.getElementById('onglet-actus').hidden = cible !== 'actus';
     document.getElementById('onglet-albums').hidden = cible !== 'albums';
+    document.getElementById('onglet-contenu').hidden = cible !== 'contenu';
     if (cible === 'albums' && typeof chargerAlbums === 'function') chargerAlbums();
+    if (cible === 'contenu' && typeof initialiserContenu === 'function') initialiserContenu();
   });
 });
 
