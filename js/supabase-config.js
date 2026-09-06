@@ -13,7 +13,7 @@
 // (celle-là doit rester totalement secrète).
 // ============================================================
 
-const SUPABASE_URL = "COLLEZ_ICI_VOTRE_PROJECT_URL";
-const SUPABASE_ANON_KEY = "COLLEZ_ICI_VOTRE_ANON_KEY";
+const SUPABASE_URL = "https://nqseoarmsoedbrwjyika.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5xc2VvYXJtc29lZGJyd2p5aWthIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg3MDYxNDUsImV4cCI6MjEwNDI4MjE0NX0.NnTnHreDRRnWWmgU_rcyFLDfAgXU-YqW7Zbur-mfJeE";
 
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
