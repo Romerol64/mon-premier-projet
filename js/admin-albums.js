@@ -101,7 +101,9 @@ function ouvrirFormulaireCreationAlbum() {
   document.getElementById('titre-formulaire-album').textContent = 'Nouvel album';
   formAlbum.reset();
   document.getElementById('album-id').value = '';
+  document.getElementById('btn-annuler-album').textContent = 'Annuler';
   cacherErreur(document.getElementById('erreur-album'));
+  document.getElementById('succes-album').hidden = true;
   sectionPhotosAlbum.hidden = true;
   grillePhotosAlbum.innerHTML = '';
   vueTableauDeBord.hidden = true;
@@ -121,7 +123,9 @@ async function ouvrirFormulaireEditionAlbum(id) {
   document.getElementById('album-titre').value = data.titre;
   document.getElementById('album-description').value = data.description || '';
   document.getElementById('album-publie').checked = data.publie;
+  document.getElementById('btn-annuler-album').textContent = 'Retour à la liste';
   cacherErreur(document.getElementById('erreur-album'));
+  document.getElementById('succes-album').hidden = true;
 
   sectionPhotosAlbum.hidden = false;
   afficherGrillePhotos(data.photos || []);
@@ -133,7 +137,9 @@ async function ouvrirFormulaireEditionAlbum(id) {
 formAlbum.addEventListener('submit', async (e) => {
   e.preventDefault();
   const erreurEl = document.getElementById('erreur-album');
+  const succesEl = document.getElementById('succes-album');
   cacherErreur(erreurEl);
+  succesEl.hidden = true;
 
   const id = document.getElementById('album-id').value;
   const enregistrement = {
@@ -148,6 +154,8 @@ formAlbum.addEventListener('submit', async (e) => {
       afficherErreur(erreurEl, "Impossible d'enregistrer l'album. Réessayez.");
       return;
     }
+    succesEl.textContent = '✓ Modifications enregistrées.';
+    succesEl.hidden = false;
     chargerAlbums();
   } else {
     const { data, error } = await supabaseClient.from('albums').insert(enregistrement).select().single();
@@ -157,6 +165,9 @@ formAlbum.addEventListener('submit', async (e) => {
     }
     document.getElementById('album-id').value = data.id;
     document.getElementById('titre-formulaire-album').textContent = 'Gérer l\'album';
+    document.getElementById('btn-annuler-album').textContent = 'Retour à la liste';
+    succesEl.textContent = '✓ Album enregistré — ajoutez des photos ci-dessous, ou cliquez "Retour à la liste".';
+    succesEl.hidden = false;
     sectionPhotosAlbum.hidden = false;
   }
 });
