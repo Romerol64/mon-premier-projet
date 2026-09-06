@@ -30,14 +30,22 @@ function compresserImage(fichier, largeurMax = 1920, qualite = 0.82) {
       canvas.height = height;
       canvas.getContext('2d').drawImage(image, 0, 0, width, height);
 
+      // Le PNG (et le WebP) peuvent avoir un fond transparent : le JPEG ne
+      // supporte pas la transparence et la remplace par du noir. On ne
+      // convertit donc en JPEG que les photos qui n'ont pas de transparence
+      // à préserver (déjà JPEG), et on garde le PNG sinon.
+      const garderTransparence = fichier.type === 'image/png' || fichier.type === 'image/webp';
+      const formatSortie = garderTransparence ? 'image/png' : 'image/jpeg';
+      const extension = garderTransparence ? '.png' : '.jpg';
+
       canvas.toBlob(
         (blob) => {
           if (!blob) { resolve(fichier); return; }
-          const nomCompresse = fichier.name.replace(/\.[^.]+$/, '') + '.jpg';
-          resolve(new File([blob], nomCompresse, { type: 'image/jpeg' }));
+          const nomCompresse = fichier.name.replace(/\.[^.]+$/, '') + extension;
+          resolve(new File([blob], nomCompresse, { type: formatSortie }));
         },
-        'image/jpeg',
-        qualite
+        formatSortie,
+        garderTransparence ? undefined : qualite
       );
     };
     image.onerror = () => reject(new Error('Image illisible'));
