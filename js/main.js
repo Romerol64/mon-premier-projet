@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const revealTargets = document.querySelectorAll(
-    '.value-card, .team-card, .pub-panel, .chalkboard, .join-card, .sponsor-slot, .section-head'
+    '.value-card, .team-card, .pub-panel, .chalkboard, .join-card, .sponsor-slot, .section-head, .testimonial-card'
   );
   revealTargets.forEach((el) => el.setAttribute('data-reveal', ''));
 
