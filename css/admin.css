@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Administration — interface volontairement simple et directe.
+   ========================================================================== */
+
+.admin-body {
+  background: #f4f5f8;
+  font-family: var(--font-condensed);
+  color: var(--navy);
+  min-height: 100vh;
+}
+
+.admin-topbar {
+  display: flex; align-items: center; gap: 14px; padding: 16px 24px;
+  background: var(--navy); color: var(--white);
+  font-weight: 600; letter-spacing: 0.02em;
+}
+.admin-logo { width: 34px; height: 34px; }
+.admin-topbar span { flex: 1; }
+
+.admin-main { max-width: 760px; margin: 0 auto; padding: 40px 20px 80px; }
+
+.admin-card {
+  background: var(--white); border-radius: var(--radius); padding: 32px;
+  box-shadow: 0 12px 30px -20px rgba(7,18,51,0.25); margin-bottom: 24px;
+}
+.admin-card-narrow { max-width: 520px; margin-inline: auto; }
+
+.admin-card h1 { font-family: var(--font-condensed); font-size: 1.5rem; margin-bottom: 10px; }
+.admin-hint { color: #64708a; font-size: 0.92rem; margin-bottom: 20px; line-height: 1.5; }
+
+/* ---------- Formulaires ---------- */
+#form-connexion, #form-actu { display: flex; flex-direction: column; gap: 6px; }
+.admin-body label { font-weight: 600; font-size: 0.88rem; margin-top: 14px; }
+.admin-body input[type="text"],
+.admin-body input[type="email"],
+.admin-body input[type="password"],
+.admin-body input[type="file"],
+.admin-body textarea {
+  font-family: var(--font-condensed); font-size: 1rem; padding: 12px 14px;
+  border: 1.5px solid #d8dce6; border-radius: 8px; background: var(--white); color: var(--navy);
+}
+.admin-body textarea { resize: vertical; }
+.admin-body input:focus, .admin-body textarea:focus { outline: none; border-color: var(--blue); }
+
+.admin-checkbox { display: flex; align-items: center; gap: 8px; font-weight: 500; margin-top: 18px; }
+.admin-checkbox input { width: 18px; height: 18px; }
+
+.admin-form-actions { display: flex; gap: 12px; margin-top: 24px; }
+
+.admin-image-apercu { max-width: 220px; border-radius: 8px; margin-top: 10px; }
+
+.admin-erreur { color: #c0392b; font-size: 0.88rem; margin-top: 14px; font-weight: 600; }
+
+/* ---------- Boutons ---------- */
+.admin-body .btn-outline-dark {
+  background: transparent; color: var(--navy); border: 1.5px solid #c6cbdb;
+}
+.admin-body .btn-outline-dark:hover { background: #eef0f5; }
+.admin-body .btn-sm { padding: 8px 16px; font-size: 0.8rem; }
+.admin-body .btn-danger { background: #fbeaea; color: #c0392b; border: 1.5px solid #f3caca; padding: 8px 16px; font-size: 0.8rem; }
+.admin-body .btn-danger:hover { background: #f6d7d7; }
+
+/* ---------- Liste des actualités ---------- */
+.admin-liste { display: flex; flex-direction: column; gap: 14px; }
+.admin-liste-item {
+  display: flex; align-items: center; gap: 16px; background: var(--white);
+  border-radius: 12px; padding: 14px 18px; box-shadow: 0 8px 20px -16px rgba(7,18,51,0.3);
+}
+.admin-liste-thumb { width: 60px; height: 60px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
+.admin-liste-thumb-vide { background: #eef0f5; }
+.admin-liste-info { flex: 1; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.admin-liste-info strong { font-size: 1rem; }
+.admin-liste-meta { font-size: 0.8rem; color: #8791a8; }
+.admin-liste-actions { display: flex; gap: 8px; flex-shrink: 0; }
+
+@media (max-width: 560px) {
+  .admin-liste-item { flex-wrap: wrap; }
+  .admin-liste-actions { width: 100%; justify-content: flex-end; }
+}

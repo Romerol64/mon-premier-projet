@@ -38,6 +38,7 @@
         <li><a href="#club">Le Club</a></li>
         <li><a href="#equipes">Équipes</a></li>
         <li><a href="#actualites">Calendrier</a></li>
+        <li><a href="#actus">Actus</a></li>
         <li><a href="#avis">Avis</a></li>
         <li><a href="#partenaires">Partenaires</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -219,6 +220,42 @@
     </div>
   </section>
 
+  <!-- ============ ACTUS ============ -->
+  <section class="actus" id="actus">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Actus &amp; réseaux</p>
+        <h2>Ce qui se passe au club</h2>
+        <p class="section-lead">Les dernières actualités publiées par le bureau, et nos réseaux sociaux en direct.</p>
+      </div>
+
+      <div id="actus-liste" class="actus-grid">
+        <p class="actus-chargement">Chargement des actualités…</p>
+      </div>
+
+      <div class="social-embeds">
+        <div class="social-embed-col">
+          <h3>Facebook</h3>
+          <iframe
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fechirollesrugby%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+            width="340" height="500" class="social-embed-frame" style="border:none;overflow:hidden"
+            scrolling="no" frameborder="0" allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            title="Page Facebook — Amicale Laïque Echirolles Rugby">
+          </iframe>
+        </div>
+        <div class="social-embed-col">
+          <h3>Instagram</h3>
+          <!-- INSTAGRAM_WIDGET_ICI : remplacer ce bloc par le code fourni par lightwidget.com (voir guide administrateur) -->
+          <div class="social-embed-placeholder">
+            <p>Flux Instagram à configurer.</p>
+            <p>Voir le guide administrateur, section "Activer le flux Instagram".</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ AVIS ============ -->
   <section class="testimonials" id="avis">
     <div class="container">
@@ -343,6 +380,9 @@
 
 <button class="to-top" id="toTop" aria-label="Retour en haut">↑</button>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/actualites.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

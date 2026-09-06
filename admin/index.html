@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Administration — Amicale Laïque Echirolles Rugby</title>
+<link rel="icon" type="image/png" href="../assets/logo-club.png">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-body">
+
+<header class="admin-topbar">
+  <img src="../assets/logo-club.png" alt="" class="admin-logo">
+  <span>Administration du site — A.L.E. Rugby</span>
+  <button id="btn-logout" class="btn btn-outline-dark" hidden>Se déconnecter</button>
+</header>
+
+<main class="admin-main">
+
+  <!-- ===================== ÉCRAN DE CONNEXION ===================== -->
+  <section id="vue-connexion" class="admin-card admin-card-narrow">
+    <h1>Connexion administrateur</h1>
+    <p class="admin-hint">Réservé aux personnes autorisées par le bureau du club. Besoin d'un accès ? Contactez un administrateur actuel.</p>
+
+    <form id="form-connexion">
+      <label for="email">Adresse email</label>
+      <input type="email" id="email" required autocomplete="username">
+
+      <label for="mot-de-passe">Mot de passe</label>
+      <input type="password" id="mot-de-passe" required autocomplete="current-password">
+
+      <button type="submit" class="btn btn-blue">Se connecter</button>
+      <p id="erreur-connexion" class="admin-erreur" hidden></p>
+    </form>
+  </section>
+
+  <!-- ===================== TABLEAU DE BORD ===================== -->
+  <section id="vue-tableau-de-bord" hidden>
+
+    <div class="admin-card">
+      <h1>Actualités du club</h1>
+      <p class="admin-hint">Ce que vous publiez ici apparaît automatiquement dans la section "Actualités" du site, dans l'ordre du plus récent au plus ancien.</p>
+      <button id="btn-nouvelle-actu" class="btn btn-blue">+ Nouvelle actualité</button>
+    </div>
+
+    <div id="liste-actualites" class="admin-liste"></div>
+
+  </section>
+
+  <!-- ===================== FORMULAIRE ACTU (création / édition) ===================== -->
+  <section id="vue-formulaire-actu" class="admin-card admin-card-narrow" hidden>
+    <h1 id="titre-formulaire-actu">Nouvelle actualité</h1>
+
+    <form id="form-actu">
+      <input type="hidden" id="actu-id">
+
+      <label for="actu-titre">Titre</label>
+      <input type="text" id="actu-titre" required placeholder="Ex : Victoire des seniors contre le RC Voiron">
+
+      <label for="actu-contenu">Texte</label>
+      <textarea id="actu-contenu" rows="8" required placeholder="Racontez l'actualité ici..."></textarea>
+
+      <label for="actu-image">Image (facultatif)</label>
+      <input type="file" id="actu-image" accept="image/*">
+      <img id="actu-image-apercu" class="admin-image-apercu" hidden alt="Aperçu">
+
+      <label class="admin-checkbox">
+        <input type="checkbox" id="actu-publie" checked>
+        Publier immédiatement (décochez pour enregistrer en brouillon)
+      </label>
+
+      <div class="admin-form-actions">
+        <button type="submit" class="btn btn-blue">Enregistrer</button>
+        <button type="button" id="btn-annuler-actu" class="btn btn-outline-dark">Annuler</button>
+      </div>
+      <p id="erreur-actu" class="admin-erreur" hidden></p>
+    </form>
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="../js/supabase-config.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>
