@@ -29,7 +29,7 @@
 .admin-hint { color: #64708a; font-size: 0.92rem; margin-bottom: 20px; line-height: 1.5; }
 
 /* ---------- Formulaires ---------- */
-#form-connexion, #form-actu { display: flex; flex-direction: column; gap: 6px; }
+#form-connexion, #form-actu, #form-album { display: flex; flex-direction: column; gap: 6px; }
 .admin-body label { font-weight: 600; font-size: 0.88rem; margin-top: 14px; }
 .admin-body input[type="text"],
 .admin-body input[type="email"],
@@ -59,6 +59,29 @@
 .admin-body .btn-sm { padding: 8px 16px; font-size: 0.8rem; }
 .admin-body .btn-danger { background: #fbeaea; color: #c0392b; border: 1.5px solid #f3caca; padding: 8px 16px; font-size: 0.8rem; }
 .admin-body .btn-danger:hover { background: #f6d7d7; }
+
+/* ---------- Onglets ---------- */
+.admin-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+.admin-tab {
+  font-family: var(--font-condensed); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.02em;
+  padding: 10px 20px; border-radius: 999px; border: 1.5px solid #d8dce6; background: var(--white);
+  color: #64708a; cursor: pointer;
+}
+.admin-tab.active { background: var(--navy); border-color: var(--navy); color: var(--white); }
+
+/* ---------- Photos d'album ---------- */
+.admin-photos-section { margin-top: 30px; padding-top: 24px; border-top: 1px solid #e6e9f0; }
+.admin-photos-section h2 { font-size: 1.05rem; margin-bottom: 6px; }
+#album-photos-input { margin-top: 10px; }
+.admin-photos-grille { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+.admin-photo-vignette { position: relative; aspect-ratio: 1; border-radius: 8px; overflow: hidden; }
+.admin-photo-vignette img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.admin-photo-supprimer {
+  position: absolute; top: 6px; right: 6px; width: 26px; height: 26px; border-radius: 50%;
+  background: rgba(4,10,31,0.75); color: var(--white); border: none; cursor: pointer; font-size: 0.8rem;
+}
+.admin-photo-supprimer:hover { background: #c0392b; }
+.admin-liste-thumb-album { display: flex; align-items: center; justify-content: center; font-weight: 700; color: #8791a8; }
 
 /* ---------- Liste des actualités ---------- */
 .admin-liste { display: flex; flex-direction: column; gap: 14px; }

@@ -27,10 +27,16 @@ async function verifierSession() {
   }
 }
 
+function cacherFormulaireAlbumSiPresent() {
+  const el = document.getElementById('vue-formulaire-album');
+  if (el) el.hidden = true;
+}
+
 function afficherConnexion() {
   vueConnexion.hidden = false;
   vueTableauDeBord.hidden = true;
   vueFormulaireActu.hidden = true;
+  cacherFormulaireAlbumSiPresent();
   btnLogout.hidden = true;
 }
 
@@ -38,9 +44,22 @@ function afficherTableauDeBord() {
   vueConnexion.hidden = true;
   vueTableauDeBord.hidden = false;
   vueFormulaireActu.hidden = true;
+  cacherFormulaireAlbumSiPresent();
   btnLogout.hidden = false;
   chargerActualites();
 }
+
+// ---------- Onglets Actualités / Albums photos ----------
+document.querySelectorAll('.admin-tab').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.admin-tab').forEach((t) => t.classList.remove('active'));
+    tab.classList.add('active');
+    const cible = tab.dataset.tab;
+    document.getElementById('onglet-actus').hidden = cible !== 'actus';
+    document.getElementById('onglet-albums').hidden = cible !== 'albums';
+    if (cible === 'albums' && typeof chargerAlbums === 'function') chargerAlbums();
+  });
+});
 
 document.getElementById('form-connexion').addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -189,10 +208,11 @@ formActu.addEventListener('submit', async (e) => {
   let imageUrl = imageUrlExistante;
 
   if (fichierImage) {
-    const nomFichier = `${Date.now()}-${fichierImage.name.replace(/[^a-zA-Z0-9.\-_]/g, '')}`;
+    const fichierCompresse = await compresserImage(fichierImage);
+    const nomFichier = `${Date.now()}-${fichierCompresse.name.replace(/[^a-zA-Z0-9.\-_]/g, '')}`;
     const { error: erreurUpload } = await supabaseClient.storage
       .from('actualites-images')
-      .upload(nomFichier, fichierImage);
+      .upload(nomFichier, fichierCompresse);
 
     if (erreurUpload) {
       afficherErreur(erreurEl, "L'envoi de l'image a échoué. Réessayez ou continuez sans image.");

@@ -27,6 +27,29 @@ Pour modifier ou supprimer une actualité existante, retournez sur
 
 ---
 
+## 1bis. Ajouter un album photo (ex. les photos d'un match)
+
+1. Sur `/admin`, cliquez l'onglet **"Albums photos"** en haut du tableau
+   de bord
+2. Cliquez **"+ Nouvel album"**
+3. Donnez un titre (ex. "Seniors vs RC Voiron — 12 octobre 2025"),
+   une description si vous voulez, puis cliquez **"Enregistrer l'album"**
+4. Une zone "Photos de l'album" apparaît en dessous : cliquez
+   **"Choose Files"** (ou "Parcourir") et sélectionnez toutes les photos
+   du match d'un coup (vous pouvez en sélectionner des dizaines à la
+   fois)
+5. Patientez pendant l'envoi (une barre de progression indique où ça en
+   est) — les photos sont automatiquement redimensionnées pour ne pas
+   prendre trop de place, sans perte visible à l'écran
+6. Une fois terminé, les photos apparaissent en vignettes ; un clic sur
+   la croix rouge d'une vignette la supprime individuellement
+
+L'album apparaît automatiquement dans la section "Galerie" du site
+public. Pour retirer un album entier, retournez sur la liste des
+albums et cliquez **"Supprimer"**.
+
+---
+
 ## 2. Donner l'accès à une nouvelle personne (ajouter un administrateur)
 
 Cette étape se fait depuis **Supabase** (le service qui héberge les
@@ -78,7 +101,11 @@ coder :
 
 - **Le contenu qui change souvent** (actualités) est stocké dans une
   base de données **Supabase**, gratuite, et affiché automatiquement sur
-  le site.
+  le site. L'espace de stockage gratuit permet plusieurs milliers de
+  photos de match (elles sont compressées automatiquement à l'envoi).
+  Si un jour ça ne suffit plus, Supabase propose des paliers payants
+  très abordables (quelques euros par mois) — ça ne demande aucun
+  changement sur le site, juste une mise à niveau du compte.
 - **Le design et la structure du site** (couleurs, sections, textes fixes
   comme "Le Club" ou "Nos équipes") vivent dans le code du site, sur
   **GitHub** (`github.com/Romerol64/mon-premier-projet`). Modifier ce

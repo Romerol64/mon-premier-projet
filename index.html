@@ -39,6 +39,7 @@
         <li><a href="#equipes">Équipes</a></li>
         <li><a href="#actualites">Calendrier</a></li>
         <li><a href="#actus">Actus</a></li>
+        <li><a href="#galerie">Galerie</a></li>
         <li><a href="#avis">Avis</a></li>
         <li><a href="#partenaires">Partenaires</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -256,6 +257,28 @@
     </div>
   </section>
 
+  <!-- ============ GALERIE ============ -->
+  <section class="galerie" id="galerie">
+    <div class="container">
+      <div class="section-head light">
+        <p class="kicker kicker-light">Galerie</p>
+        <h2>Nos matchs en images</h2>
+        <p class="section-lead">Les albums photos du club, match par match. Cliquez sur un album pour le parcourir.</p>
+      </div>
+
+      <div id="galerie-liste" class="galerie-grid">
+        <p class="actus-chargement">Chargement des albums…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LIGHTBOX GALERIE (masquée par défaut) ============ -->
+  <div id="lightbox" class="lightbox" hidden>
+    <button id="lightbox-fermer" class="lightbox-fermer" aria-label="Fermer la galerie">✕</button>
+    <h3 id="lightbox-titre" class="lightbox-titre"></h3>
+    <div id="lightbox-photos" class="lightbox-photos"></div>
+  </div>
+
   <!-- ============ AVIS ============ -->
   <section class="testimonials" id="avis">
     <div class="container">
@@ -383,6 +406,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script src="js/supabase-config.js"></script>
 <script src="js/actualites.js"></script>
+<script src="js/galerie.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

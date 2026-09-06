@@ -40,13 +40,30 @@
   <!-- ===================== TABLEAU DE BORD ===================== -->
   <section id="vue-tableau-de-bord" hidden>
 
-    <div class="admin-card">
-      <h1>Actualités du club</h1>
-      <p class="admin-hint">Ce que vous publiez ici apparaît automatiquement dans la section "Actualités" du site, dans l'ordre du plus récent au plus ancien.</p>
-      <button id="btn-nouvelle-actu" class="btn btn-blue">+ Nouvelle actualité</button>
+    <div class="admin-tabs">
+      <button type="button" class="admin-tab active" data-tab="actus">Actualités</button>
+      <button type="button" class="admin-tab" data-tab="albums">Albums photos</button>
     </div>
 
-    <div id="liste-actualites" class="admin-liste"></div>
+    <div id="onglet-actus" class="admin-tab-panel">
+      <div class="admin-card">
+        <h1>Actualités du club</h1>
+        <p class="admin-hint">Ce que vous publiez ici apparaît automatiquement dans la section "Actualités" du site, dans l'ordre du plus récent au plus ancien.</p>
+        <button id="btn-nouvelle-actu" class="btn btn-blue">+ Nouvelle actualité</button>
+      </div>
+
+      <div id="liste-actualites" class="admin-liste"></div>
+    </div>
+
+    <div id="onglet-albums" class="admin-tab-panel" hidden>
+      <div class="admin-card">
+        <h1>Albums photos</h1>
+        <p class="admin-hint">Créez un album par match ou par événement, puis ajoutez-y toutes les photos. Elles sont automatiquement compressées à l'envoi pour économiser l'espace de stockage, sans perte visible.</p>
+        <button id="btn-nouvel-album" class="btn btn-blue">+ Nouvel album</button>
+      </div>
+
+      <div id="liste-albums" class="admin-liste"></div>
+    </div>
 
   </section>
 
@@ -80,10 +97,48 @@
     </form>
   </section>
 
+  <!-- ===================== FORMULAIRE ALBUM (création / édition) ===================== -->
+  <section id="vue-formulaire-album" class="admin-card admin-card-narrow" hidden>
+    <h1 id="titre-formulaire-album">Nouvel album</h1>
+
+    <form id="form-album">
+      <input type="hidden" id="album-id">
+
+      <label for="album-titre">Titre de l'album</label>
+      <input type="text" id="album-titre" required placeholder="Ex : Seniors vs RC Voiron — 12 octobre 2025">
+
+      <label for="album-description">Description (facultatif)</label>
+      <textarea id="album-description" rows="3" placeholder="Quelques mots sur ce match ou cet événement..."></textarea>
+
+      <label class="admin-checkbox">
+        <input type="checkbox" id="album-publie" checked>
+        Publier immédiatement (décochez pour enregistrer en brouillon)
+      </label>
+
+      <div class="admin-form-actions">
+        <button type="submit" class="btn btn-blue">Enregistrer l'album</button>
+        <button type="button" id="btn-annuler-album" class="btn btn-outline-dark">Annuler</button>
+      </div>
+      <p id="erreur-album" class="admin-erreur" hidden></p>
+    </form>
+
+    <div id="section-photos-album" class="admin-photos-section" hidden>
+      <h2>Photos de l'album</h2>
+      <p class="admin-hint">Sélectionnez autant de photos que vous voulez (elles sont compressées automatiquement). L'envoi peut prendre quelques instants selon le nombre de photos et votre connexion.</p>
+
+      <input type="file" id="album-photos-input" accept="image/*" multiple>
+      <p id="album-photos-progression" class="admin-hint" hidden></p>
+
+      <div id="grille-photos-album" class="admin-photos-grille"></div>
+    </div>
+  </section>
+
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script src="../js/supabase-config.js"></script>
+<script src="../js/image-utils.js"></script>
 <script src="../js/admin.js"></script>
+<script src="../js/admin-albums.js"></script>
 </body>
 </html>
