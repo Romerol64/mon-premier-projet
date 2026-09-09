@@ -522,6 +522,8 @@ section { padding: 110px 0; position: relative; }
 .social-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding: 26px 24px; font-size: 0.82rem; flex-wrap: wrap; gap: 10px; }
 .footer-tag { font-family: var(--font-display); font-style: italic; color: var(--gold-light); }
+.footer-admin-link { color: rgba(255, 255, 255, 0.45); text-decoration: none; font-size: 0.78rem; }
+.footer-admin-link:hover { color: var(--gold-light); text-decoration: underline; }
 
 /* ---------- Back to top ---------- */
 .to-top {
