@@ -222,3 +222,18 @@ automatique, sans action manuelle supplémentaire.
   tableau de bord Netlify (onglet "Deploys") pour voir si une
   publication a échoué. En dernier recours, contactez un développeur
   avec accès aux trois comptes (GitHub, Netlify, Supabase).
+- **Plus personne ne peut se connecter à `/admin`, ni voir les pages
+  catégorie (elles restent bloquées sur "Chargement…")** → le projet
+  Supabase est probablement en pause (l'offre gratuite met en pause
+  tout projet resté inactif environ une semaine). Allez sur
+  [supabase.com](https://supabase.com), ouvrez le projet, et cliquez
+  sur **"Restore project"** si un bandeau l'indique. Patientez 1 à 2
+  minutes puis réessayez.
+  Une tâche automatique (GitHub Actions, fichier
+  `.github/workflows/keep-supabase-awake.yml`) appelle le site tous les
+  3 jours pour empêcher normalement cette pause de se reproduire — mais
+  GitHub désactive les tâches planifiées d'un dépôt resté 60 jours sans
+  aucun commit. Si le site n'est plus du tout modifié pendant 2 mois,
+  il faudra relancer Supabase manuellement une fois (comme ci-dessus) ;
+  le moindre petit changement poussé sur GitHub réactive ensuite la
+  tâche automatique.
