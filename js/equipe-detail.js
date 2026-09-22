@@ -26,13 +26,21 @@ async function chargerPageCategorie() {
   }
 
   try {
-    const { data, error } = await supabaseClient
+    const requete = supabaseClient
       .from('contenu_items')
       .select('champs')
       .eq('section', 'pages_equipe')
       .eq('publie', true)
       .eq('champs->>slug', slug)
       .maybeSingle();
+
+    // Filet de sécurité : si la connexion traîne (réseau lent, coupure),
+    // on affiche un message plutôt que de laisser "Chargement…" indéfiniment.
+    const delaiDepasse = new Promise((resolve) =>
+      setTimeout(() => resolve({ data: null, error: { message: 'delai_depasse' } }), 8000)
+    );
+
+    const { data, error } = await Promise.race([requete, delaiDepasse]);
 
     if (error || !data) {
       chargement.hidden = true;
