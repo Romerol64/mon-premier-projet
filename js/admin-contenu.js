@@ -44,7 +44,7 @@ const SECTIONS_CONFIG = {
     champs: [
       { cle: 'nom', label: 'Nom du partenaire', type: 'text', requis: true },
       { cle: 'description', label: 'Description (facultatif)', type: 'text' },
-      { cle: 'logo', label: 'Logo (facultatif — image affichée à taille uniforme, quel que soit le format d\'origine)', type: 'image', cleUrl: 'logo_url' },
+      { cle: 'logo', label: 'Logo (facultatif — image affichée à taille uniforme ; un éventuel fond noir uni est automatiquement rendu transparent)', type: 'image', cleUrl: 'logo_url', supprimerFondNoir: true },
       { cle: 'site_web', label: 'Site internet du partenaire (facultatif — la carte devient cliquable)', type: 'url', placeholder: 'https://exemple.fr' },
     ],
     resume: (c) => c.nom || '(sans nom)',
@@ -328,7 +328,9 @@ async function soumettreFormulaireContenu(e) {
       const fichier = el.files[0];
       if (fichier) {
         const bucket = champ.type === 'image' ? BUCKET_CONTENU_IMAGES : BUCKET_DOCUMENTS;
-        const fichierAEnvoyer = champ.type === 'image' ? await compresserImage(fichier) : fichier;
+        const fichierAEnvoyer = champ.type === 'image'
+          ? await compresserImage(fichier, 1920, 0.82, !!champ.supprimerFondNoir)
+          : fichier;
         const nomFichier = `${Date.now()}-${fichierAEnvoyer.name.replace(/[^a-zA-Z0-9.\-_]/g, '')}`;
         const { error: erreurUpload } = await supabaseClient.storage.from(bucket).upload(nomFichier, fichierAEnvoyer);
         if (erreurUpload) {
