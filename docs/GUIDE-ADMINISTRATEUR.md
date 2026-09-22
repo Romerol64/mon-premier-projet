@@ -118,6 +118,13 @@ foncée, pour que tous les logos aient le même rendu propre côte à côte.
 Sans logo ajouté, le nom et la description du partenaire s'affichent en
 texte à la place.
 
+Le champ **"Site internet du partenaire"** (facultatif) rend toute la
+carte cliquable sur le site public : un visiteur qui clique dessus est
+redirigé vers le site du partenaire dans un nouvel onglet. Collez
+l'adresse complète, avec `https://` devant (ex : `https://exemple.fr`).
+Sans adresse renseignée, la carte reste affichée normalement mais n'est
+pas cliquable.
+
 ---
 
 ## 2. Donner l'accès à une nouvelle personne (ajouter un administrateur)

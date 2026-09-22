@@ -45,6 +45,7 @@ const SECTIONS_CONFIG = {
       { cle: 'nom', label: 'Nom du partenaire', type: 'text', requis: true },
       { cle: 'description', label: 'Description (facultatif)', type: 'text' },
       { cle: 'logo', label: 'Logo (facultatif — image affichée à taille uniforme, quel que soit le format d\'origine)', type: 'image', cleUrl: 'logo_url' },
+      { cle: 'site_web', label: 'Site internet du partenaire (facultatif — la carte devient cliquable)', type: 'url', placeholder: 'https://exemple.fr' },
     ],
     resume: (c) => c.nom || '(sans nom)',
   },

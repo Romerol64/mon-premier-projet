@@ -134,18 +134,23 @@ async function chargerPartenaires() {
   const conteneur = document.getElementById('sponsors-grid');
   if (!items || !conteneur) return;
   conteneur.innerHTML = items.map((item) => {
+    const lien = item.champs.site_web || null;
+    const balise = lien ? 'a' : 'div';
+    const attributsLien = lien ? ` href="${echapperHtml(lien)}" target="_blank" rel="noopener sponsor"` : '';
+    const titre = `${echapperHtml(item.champs.nom)}${item.champs.description ? ' — ' + item.champs.description : ''}`;
+
     if (item.champs.logo_url) {
       return `
-        <div class="sponsor-card sponsor-card-logo" title="${echapperHtml(item.champs.nom)}${item.champs.description ? ' — ' + item.champs.description : ''}">
+        <${balise} class="sponsor-card sponsor-card-logo"${attributsLien} title="${titre}">
           <img src="${item.champs.logo_url}" alt="${echapperHtml(item.champs.nom)}" loading="lazy">
-        </div>
+        </${balise}>
       `;
     }
     return `
-      <div class="sponsor-card">
+      <${balise} class="sponsor-card"${attributsLien}>
         <strong>${echapperHtml(item.champs.nom)}</strong>
         ${item.champs.description ? `<span>${echapperHtml(item.champs.description)}</span>` : ''}
-      </div>
+      </${balise}>
     `;
   }).join('');
 }
